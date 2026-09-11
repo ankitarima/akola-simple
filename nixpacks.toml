@@ -1,0 +1,8 @@
+# nixpacks.toml
+# Configuration for Coolify Nixpacks deployment
+
+providers = ["php"]
+
+[variables]
+# Set PHP document root to the app directory (default)
+NIXPACKS_PHP_ROOT_DIR = "/app"

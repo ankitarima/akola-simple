@@ -1,0 +1,11 @@
+{
+    "name": "akola/simple",
+    "description": "Akola Simple — landing page, contact inbox, and admin panel, deployed on Coolify",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "ext-json": "*"
+    }
+}

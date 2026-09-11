@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akola Simple — PHP + MySQL Boilerplate</title>
+<meta name="description" content="A batteries-included PHP + MySQL boilerplate: landing page, contact-to-admin pipeline, session auth, and one-command Coolify deployment." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="brand" data-site="name">Akola Simple</a>
+    <nav class="main-nav" data-nav-links></nav>
+    <div class="nav-actions">
+      <a href="#demo" class="btn btn-primary" data-site="ctaLabel">Try the live demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-inner">
+        <span class="badge-pill" data-site="badge">Open-source PHP + MySQL boilerplate</span>
+        <h1>From a spec to a live site, <span class="gradient-text">without the setup tax.</span></h1>
+        <p class="lead" data-site="description">Akola Simple is a batteries-included starting point: a landing page, a working contact-to-admin pipeline, and one-command Coolify deployment.</p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary" data-site="ctaLabel">Try the live demo</a>
+          <a href="#features" class="btn btn-outline" data-site="secondaryCtaLabel">See features</a>
+        </div>
+        <div class="hero-stats" data-hero-stats></div>
+      </div>
+      <div class="hero-visual" data-hero-visual></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Features</span>
+      <h2>What's already built in</h2>
+      <p>Every piece below is real, working code in this repo — not a mockup. Click through and it's there.</p>
+    </div>
+    <div class="grid-3" data-feature-grid></div>
+  </div>
+</section>
+
+<section id="how-it-works" class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">How It Works</span>
+      <h2>From spec to production</h2>
+      <p>The workflow this boilerplate is built around, described in full in AGENT.md.</p>
+    </div>
+    <div class="process-list" data-process-list></div>
+  </div>
+</section>
+
+<section id="why-us" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why Akola Simple</span>
+      <h2>Built to be simple to work with</h2>
+    </div>
+    <div class="grid-3" data-whyus-grid></div>
+  </div>
+</section>
+
+<section class="section-dark section-tight">
+  <div class="container">
+    <div class="stats-grid" data-stats-grid></div>
+  </div>
+</section>
+
+<section id="demo" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Live Demo</span>
+      <h2 data-site="demo.heading">Try the live demo</h2>
+      <p data-site="demo.description">This form is wired to a real database — submit it and the entry shows up in the admin inbox immediately.</p>
+    </div>
+    <div class="form-shell">
+      <div class="form-card">
+        <div class="form-alert" data-form-alert></div>
+
+        <form id="contact-form" novalidate>
+          <div class="honeypot-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field-group">
+            <label for="full_name">Full Name <span class="req">*</span></label>
+            <input type="text" id="full_name" name="full_name" required />
+            <div class="error-msg" data-error-for="full_name"></div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required />
+              <div class="error-msg" data-error-for="email"></div>
+            </div>
+            <div class="field-group">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" />
+              <div class="error-msg" data-error-for="phone"></div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Say anything — this is just a demo." required></textarea>
+            <div class="error-msg" data-error-for="message"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+
+        <div class="success-screen" data-form-success>
+          <div class="success-icon">✓</div>
+          <h3>Message sent</h3>
+          <p>That entry is now sitting in the contact_messages table — log into /admin/ to see it in the inbox.</p>
+        </div>
+      </div>
+
+      <div class="form-summary">
+        <h3>How this demo works</h3>
+        <div data-demo-steps></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand" data-site="name">Akola Simple</div>
+        <p class="footer-tagline" data-site="tagline">From a spec to a live site, without the setup tax.</p>
+        <div class="social-icons">
+          <a href="#" data-site-href="socials.twitter" aria-label="Twitter">𝕏</a>
+          <a href="#" data-site-href="socials.linkedin" aria-label="LinkedIn">in</a>
+          <a href="#" data-site-href="socials.github" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul data-nav-links></ul>
+      </div>
+      <div>
+        <h4>Questions</h4>
+        <ul><li><a href="mailto:hello@akolasimple.com" data-site="contactEmail" data-site-mailto="contactEmail">hello@akolasimple.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> <span data-site="name">Akola Simple</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/forms.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

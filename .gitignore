@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+
+# Local secrets — never commit real credentials
+backend/db_credentials.php
+
+# Runtime/private data written by the app (admin password file, uploads, etc.)
+backend/data/*
+!backend/data/.gitkeep
+
+# Dependency directories, if a project adds any
+/vendor/
+/node_modules/
