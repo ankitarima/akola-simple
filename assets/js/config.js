@@ -19,13 +19,18 @@ const SITE_CONFIG = {
   secondaryCtaHref: "#features",
   apiBase: "backend/api",
   contactEmail: "hello@akolasimple.com",
+  repo: {
+    url: "https://github.com/ankitarima/akola-simple",
+    label: "ankitarima/akola-simple",
+  },
   socials: {
     twitter: "",
     linkedin: "",
-    github: "",
+    github: "https://github.com/ankitarima/akola-simple",
   },
   nav: [
     { label: "Features", href: "#features" },
+    { label: "Get Started", href: "#get-started" },
     { label: "How It Works", href: "#how-it-works" },
     { label: "Why Akola Simple", href: "#why-us" },
     { label: "Live Demo", href: "#demo" },
@@ -93,6 +98,23 @@ const SITE_CONFIG = {
       linkLabel: "Read the workflow",
     },
   ],
+
+  gettingStarted: {
+    heading: "Clone it and run it",
+    description: "No build step, no framework install — just PHP and MySQL.",
+    commands: [
+      "git clone https://github.com/ankitarima/akola-simple.git",
+      "cd akola-simple",
+      "cp backend/db_credentials.example.php backend/db_credentials.php",
+      "php -S localhost:8000",
+    ],
+    steps: [
+      { title: "Point it at a database", description: "Edit backend/db_credentials.php with your local MySQL/MariaDB details." },
+      { title: "Open the site", description: "http://localhost:8000 — the landing page and admin panel both work immediately, no setup step." },
+      { title: "Grab your admin password", description: "The first request creates admin_users and writes a one-time password to backend/data/INITIAL_ADMIN_PASSWORD.txt." },
+      { title: "Deploy when ready", description: "Push to a Coolify app — Nixpacks and the included nginx config handle the rest. Full guide in AGENT.md." },
+    ],
+  },
 
   process: [
     {

@@ -324,6 +324,39 @@ code { background: var(--bg-tint); padding: 2px 6px; border-radius: 4px; font-si
 .stat-block .stat-figure { font-size: 38px; font-weight: 800; }
 .stat-block .stat-caption { font-size: 13.5px; margin-top: 6px; color: inherit; opacity: 0.7; }
 
+/* Get started: terminal-style code block + checklist */
+.get-started-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.code-block {
+  background: var(--ink);
+  color: #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 26px 28px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 2;
+  overflow-x: auto;
+  box-shadow: var(--shadow-md);
+}
+.code-block .code-line { white-space: pre; }
+.code-block .code-prompt { color: var(--blue); margin-right: 10px; user-select: none; }
+.repo-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13.5px; font-weight: 700; color: var(--ink);
+  background: var(--white); border: 1.5px solid var(--border);
+  padding: 8px 16px; border-radius: 999px; margin-bottom: 22px;
+}
+.repo-link:hover { border-color: var(--blue); color: var(--blue-dark); }
+.checklist { display: flex; flex-direction: column; gap: 20px; }
+.checklist-row { display: flex; gap: 14px; align-items: flex-start; }
+.checklist-row .check-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--gradient-soft); color: var(--blue-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; flex-shrink: 0; margin-top: 2px;
+}
+.checklist-row strong { display: block; font-size: 14.5px; color: var(--ink); margin-bottom: 2px; }
+.checklist-row span { font-size: 13.5px; color: var(--muted); }
+
 /* ---------- Forms ---------- */
 .form-shell {
   display: grid;
@@ -450,7 +483,7 @@ input.invalid, select.invalid, textarea.invalid { border-color: var(--red); }
 
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .form-shell { grid-template-columns: 1fr; }
+  .form-shell, .get-started-grid { grid-template-columns: 1fr; }
   .form-summary { position: static; }
   .grid-3, .process-list, .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -462,6 +495,7 @@ input.invalid, select.invalid, textarea.invalid { border-color: var(--red); }
   .site-header .container { height: 62px; }
 
   .nav-toggle { display: flex; }
+  .github-link { display: none; }
 
   .main-nav {
     display: none;
@@ -493,6 +527,7 @@ input.invalid, select.invalid, textarea.invalid { border-color: var(--red); }
   .section { padding: 56px 0; }
   .section-tight { padding: 40px 0; }
   .form-card { padding: 26px 20px; }
+  .code-block { padding: 20px; font-size: 12.5px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 

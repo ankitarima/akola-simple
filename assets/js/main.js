@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHeroStats();
   renderHeroVisual();
   renderFeatures();
+  renderCodeBlock();
+  renderGettingStartedSteps();
   renderProcess();
   renderWhyUs();
   renderStats();
@@ -113,6 +115,30 @@ function renderFeatures() {
           <p>${f.description}</p>
           <div>${f.tags.map((t) => `<span class="tag-pill">${t}</span>`).join('')}</div>
           <a href="#demo" class="card-link">${f.linkLabel} →</a>
+        </div>`
+      )
+      .join('');
+  });
+}
+
+/** Renders SITE_CONFIG.gettingStarted.commands as terminal lines into [data-code-block]. */
+function renderCodeBlock() {
+  document.querySelectorAll('[data-code-block]').forEach((el) => {
+    el.innerHTML = SITE_CONFIG.gettingStarted.commands
+      .map((cmd) => `<div class="code-line"><span class="code-prompt">$</span>${cmd}</div>`)
+      .join('');
+  });
+}
+
+/** Renders SITE_CONFIG.gettingStarted.steps into [data-getting-started-steps]. */
+function renderGettingStartedSteps() {
+  document.querySelectorAll('[data-getting-started-steps]').forEach((el) => {
+    el.innerHTML = SITE_CONFIG.gettingStarted.steps
+      .map(
+        (s, i) => `
+        <div class="checklist-row">
+          <span class="check-icon">${i + 1}</span>
+          <div><strong>${s.title}</strong><span>${s.description}</span></div>
         </div>`
       )
       .join('');
