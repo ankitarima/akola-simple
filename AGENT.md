@@ -46,6 +46,7 @@ backend/
     helpers.php          # json_response, validation, clean_str, etc.
   api/
     contact.php          # example public endpoint — pattern to copy for new forms
+    health.php           # GET, unauthenticated — for uptime monitors / Coolify's health check
   data/                 # private runtime data (admin's one-time password file) — never web-reachable
 
 database/
@@ -216,3 +217,12 @@ in practice, the self-delete check already covers the single-admin case).
   rule to `nginx.template.conf` the way `admin/` and `backend/api/` are
   handled, or it won't be reachable in production even though it works
   locally.
+- **Health check**: `backend/api/health.php` returns `{"status":"ok",...}`
+  with HTTP 200 when the app can reach the database, or HTTP 503 with
+  `"status":"error"` and the failing check named in `checks` otherwise.
+  In the Coolify app's settings, set the Health Check path to
+  `/backend/api/health.php` (port matches the app's normal port) so
+  Coolify can tell when a deploy is actually ready and flag the
+  container unhealthy if the database becomes unreachable. It's a raw,
+  short-timeout DB ping — not the full migration/admin-seed bootstrap —
+  so it stays cheap even if Coolify probes it every few seconds.

@@ -74,6 +74,8 @@ repo, not a fabricated business metric — keep it that way when editing.
   Coolify deployment should set the same values as `DB_HOST`/`DB_PORT`/
   `DB_NAME`/`DB_USER`/`DB_PASS` environment variables instead.
 - Deployed via Coolify (Nixpacks, PHP provider) per `AGENT.md`.
+- Health check at `backend/api/health.php` (200 when the DB is reachable,
+  503 otherwise) — set as the Coolify app's Health Check path.
 
 ## Anything Else
 
